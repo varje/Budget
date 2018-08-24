@@ -4,7 +4,7 @@ def neto(bruto):
         return bruto
     else:
         maksustatav = float(bruto) - maksuvaba
-        return maksustatav * 0.80 + maksuvaba
+        return round(maksustatav * 0.80 + maksuvaba, 2)
 
 ühe_lapse_toetus=45
 
@@ -36,7 +36,7 @@ lapsi.place(x=100, y=55, width=50)
 
 
 def arvuta():
-    sissetulek = float(neto(emapalk.get())) + float(neto(isapalk.get()))+ float(lapsi.get()) * ühe_lapse_toetus
+    sissetulek = round(float(neto(emapalk.get())) + float(neto(isapalk.get()))+ float(lapsi.get()) * ühe_lapse_toetus, 2)
     silt = ttk.Label(raam, text=("Sissetulek(€):", sissetulek),font=("Helvetica", 14))
     silt.place(x=5, y=130)
     silt = ttk.Label(raam, text=("*Ema(neto,€):", neto(emapalk.get())), foreground='blue')
